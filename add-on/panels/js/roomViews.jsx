@@ -521,6 +521,9 @@ loop.roomViews = (function(mozL10n) {
         var roomTitle = this.state.roomName ||
                         this.state.roomContextUrls[0].description ||
                         this.state.roomContextUrls[0].location;
+        if (typeof roomTitle === "object" && roomTitle === null) {
+          roomTitle = " ";
+        }
         this.setTitle(roomTitle);
       }
 
